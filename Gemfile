@@ -1,6 +1,8 @@
 # WHATS UP PUNK BITCHES
 # justin here
 
+# this is so fucking cool you guys
+
 source 'https://rubygems.org'
 
 
