@@ -1,5 +1,7 @@
 # WHATS UP PUNK BITCHES
 
+# this is so fucking cool you guys
+
 source 'https://rubygems.org'
 
 
