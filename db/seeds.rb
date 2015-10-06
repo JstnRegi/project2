@@ -1,7 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Bootcamp.create(name: 'General Assembly - SF', email: 'sf@generalassemb.ly', phone: '+1 (415) 592-6885', url: 'https://generalassemb.ly/san-francisco', photo: 'http://static1.squarespace.com/static/522d5bfee4b090a2d482afb3/t/53eac34be4b0a70179a4fee6/1407894347951/General+Assembly+Logo', address: '5th Floor, 225 Bush St, San Francisco, CA 94104', information: 'General Assembly is a global network of campuses for technology, business, and design. General Assembly offers many different ways to learn important skills taught by top practitioners with real-world experience.', faq: 'https://generalassemb.ly/faq', courses: 'Web Development Immersive| User Expereience Design Immersive| Product Management Immersive| Back End Web Development| Visual Design| Data Science| Front End Web Development| Digital Marketing| Mobile Development')
+
+Bootcamp.create(name: 'Hack Reactor', email: 'admissions@hackreactor.com', phone: '+1 (415) 547-0254', url: 'http://www.hackreactor.com/', photo: 'http://code-ninja.co/images/blog/Hack-Reactor-Blog.png', address: '944 Market St #8, San Francisco, CA 94102', information: 'You’ll begin Hack Reactor with a feeling of excitement and anticipation. Twelve weeks later, you’ll follow the footsteps of our trailblazing alumni, taking the methodologies and best practices you perfected at our coding bootcamp to your next job. We’ve built world class software engineering curriculum and programming courses. However, Hack Reactor is, above all else, a world-class learning environment.', faq: 'http://www.hackreactor.com/questions', courses: 'Full Stack Web Development')

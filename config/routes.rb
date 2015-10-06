@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 	get '/bootcamps/:id/review', to: 'reviews#new'
 
 	post '/reviews', to: 'reviews#create'
+	
 	get  '/reviews', to: 'reviews#show'
 
 	get "/sign_in", to: "sessions#new"

@@ -9,6 +9,10 @@ class BootcampsController < ApplicationController
   end
 
   def show
+    @bootcamp = Bootcamp.find(params[:id]) 
+
+    render :show
+
   end
 
   def edit
