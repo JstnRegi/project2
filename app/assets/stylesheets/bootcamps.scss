@@ -40,12 +40,18 @@
               /* Header */
 /*----------------------------------------------*/
 
-
+.review-container {
+  background-color: grey;
+}
 
 header {
     color: #fff;
-    background: #18bc9c;
+    background: #59D3B4;
     padding-left: 0px !important;
+}
+
+.container h1 {
+  color: #5F6060;
 }
 
 header .container {
@@ -61,7 +67,7 @@ header .container {
   background-color: white;
   border-radius: 5%;
   padding: 5px;
-  border: solid grey 5px;
+  border: solid #8E8E8E 5px;
 }
 
 .img-responsive {
@@ -79,7 +85,7 @@ header .container {
 }
 
 .fa {
-  color: yellow;
+  color: #FFFF99;
   padding-right: 10px;
 }
 
@@ -93,14 +99,14 @@ header .container {
 
 #overallRating {
   background-color: white;
-  color: #18bc9c;
+  color: #59D3B4;
   text-align: center;
   width: 224px;
   height: 170px;
   max-width: 224px;
   max-height: 170px;
   border-radius: 5%;
-  border: solid grey 5px;
+  border: solid #8E8E8E 5px;
 }
 
 .rating-number {
@@ -113,6 +119,20 @@ header .container {
   font-size: 20px;
   color: gray;
 
+}
+
+.btn-danger {
+
+}
+
+.btn-warning {
+  background-color: gray !important;
+  border-color: transparent !important;
+}
+
+.btn-warning:hover {
+  background-color: #FFFF99 !important;
+  color: gray !important;
 }
 
 
@@ -151,7 +171,7 @@ header .container {
   padding: 20px 10px 20px 10px;
   border: solid white 1px;
   color: #fff;
-  background-color: #18bc9c;
+  background-color: #59D3B4;
 /*  max-width: 130px;
   max-height: 80px;*/
 }
@@ -164,8 +184,9 @@ header .container {
   text-align: right;
 }
 
-.more hover {
-  background-color: yellow;
+.button:hover {
+  background-color: #FFFF99 !important;
+  color: gray !important;
 }
 
 
@@ -180,6 +201,7 @@ header .container {
 
 footer {
     background-color: #2E3639;
+
     position: relative;
     z-index: 1;
 }
@@ -198,6 +220,7 @@ footer {
     content: attr(data-icon);
     -webkit-font-smoothing: antialiased;
 }
+
 body {
     font-family: 'Verdana', sans-serif;
 }
@@ -381,9 +404,6 @@ footer .bar-wrap {
     color: #778888;
     margin-top: 5px;
 }
-
-
-
 
 
 
