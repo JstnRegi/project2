@@ -56,7 +56,7 @@ class Bootcamp < ActiveRecord::Base
 		    @notEmployedTotal = @notEmployedTotal + 1
 		  elsif review.hired == "Still Attending"
 		    @stillAttendingTotal = @stillAttendingTotal + 1
-		  elsif review.hired == "Not Seeking Employment"
+		  elsif review.hired == "Not Looking"
 		    @notSeekingTotal = @notSeekingTotal + 1
 		  end
 		end

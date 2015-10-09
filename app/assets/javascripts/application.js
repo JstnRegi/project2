@@ -27,6 +27,7 @@ $(document).ready(function() {
 	//   }
 	// });
 
+	reviewsChecker();
 
 	$("#home_link").click(function() {
 		scrollToAnchor('home_link');
@@ -48,9 +49,11 @@ $(document).ready(function() {
 		scrollToAnchor('slide4');
 	});
 
+	
 	submitReview();
 	editReview();
 	bootcampBars();
+	
 
 
 });
@@ -89,8 +92,8 @@ function jobStatus() {
 		hired = 'Not Employed';
 	} else if (document.getElementById('still-attending').checked){
 		hired = 'Still Attending';
-	} else if (document.getElementById('not-seeking-employment').checked){
-		hired = 'Not Seeking Employment';
+	} else if (document.getElementById('not-looking').checked){
+		hired = 'Not Looking';
 	}
 
 	return hired;
@@ -176,6 +179,10 @@ function bootcampBars() {
     width: campusAvg + "%"
   	}, 1000, "easeOutCubic");
 
+}
 
-
+function reviewsChecker() {
+	if(!!document.getElementById("reviews-area")) {
+		$('#navbar-ul').prepend('<li><button class="btn btn-default" id="slide1_button">Reviews</button></li>')
+	}
 }

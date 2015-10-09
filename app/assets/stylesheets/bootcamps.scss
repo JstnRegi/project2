@@ -27,6 +27,8 @@
   color: rgb(128,128,128);
 }
 
+    
+
 @media screen and (max-width: 375px) {
     #myNavbar {
      background-color: black;
@@ -111,9 +113,9 @@ header .container {
     margin-top: 30px;
 }
 
-
-
-
+.about {
+  margin-bottom: 5%;
+}
 
 .courses-offered {
   min-height: 150px;
@@ -143,7 +145,9 @@ header .container {
   border-radius: 0px !important;
 }
 
-
+.rev-button li {
+  display: inline !important;
+}
 
 .back-button {
   background-color: darkgrey !important;
@@ -156,7 +160,11 @@ header .container {
 }
 
 
-
+#info-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
 
 
 /*----------------------------------------------*/
@@ -224,6 +232,7 @@ header .container {
 .more button:hover {
   background-color: yellow;
 }
+
 
 
 

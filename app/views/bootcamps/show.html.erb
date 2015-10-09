@@ -5,8 +5,7 @@
 
 
 <!--Review Section-->
-
-
+<a name="reviews"href="#/reviews" id="reviews-area"></a>
 <div class="container">
 	<div class="row">
 		<h1>Reviews</h1>
@@ -40,7 +39,7 @@
 					</div>
 
 					<div class="col-lg-12 review">
-						<p><%= review.content %></p>
+						 <p><%= truncate(review.content, length: 200, separator: " ") %></p>
 					</div>
 					
 					<h5 class="more"><a href="#" class="button">Read More...</a></h5>
@@ -58,21 +57,21 @@
             
               <h3>Courses Offered</h3>
               <ul>
-                <p><% @bootcamp.courses.split("|").each do | course |  %>
-                <li><%= course %></li>
-                <% end %></p>
+                <h5><% @bootcamp.courses.split("|").each do | course |  %>
+                <li><%= course %></li><br>
+                <% end %></h5>
               </ul>
             
             <br>
 			<ul>
 				<h4>More Information</h4>
-					<li>Hours of Operations: <br> M-F 8:30AM - 9:00PM</li>
+					<h5><li>Hours of Operations: <br> M-F 8:30AM - 9:00PM</li>
 					<br>
-					<li>Scholarships <br> Yes</li>
+					<li>Scholarships<br>Yes</li>
 					<br>
 					<li>Co-ed <br> Yes </li>
 					<br>
-					<li>Meal Plan <br> Hahaha, no.</li>
+					<li>Meal Plan <br> Hahaha, no.</li></h5>
 			</ul>
 		</div>
 		<!-- /#sidebar-wrapper -->

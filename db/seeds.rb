@@ -4,7 +4,7 @@ ga = Bootcamp.create(name: 'General Assembly - SF', email: 'sf@generalassemb.ly'
 
 hr = Bootcamp.create(name: 'Hack Reactor', email: 'admissions@hackreactor.com', phone: '+1 (415) 547-0254', url: 'http://www.hackreactor.com/', photo: 'http://code-ninja.co/images/blog/Hack-Reactor-Blog.png', address: '944 Market St #8, San Francisco, CA 94102', information: 'You’ll begin Hack Reactor with a feeling of excitement and anticipation. Twelve weeks later, you’ll follow the footsteps of our trailblazing alumni, taking the methodologies and best practices you perfected at our coding bootcamp to your next job. We’ve built world class software engineering curriculum and programming courses. However, Hack Reactor is, above all else, a world-class learning environment.', faq: 'http://www.hackreactor.com/questions', courses: 'Full Stack Web Development')
 
-answer = ['Employed', 'Not Employed', 'Still Attending', 'Not Seeking Employment']
+answer = ['Employed', 'Not Employed', 'Still Attending', 'Not Looking']
 
 worth = ['Yes', 'No']
 
@@ -13,7 +13,7 @@ bc = [ga, hr]
 
 
 
-500.times do
+100.times do
   user = User.create(
     username: FFaker::Internet::user_name,
     email: FFaker::Internet::email,
@@ -24,5 +24,33 @@ bc = [ga, hr]
 
   user.bootcamp_reviews << review
   bc[rand(0 .. 1)].bootcamp_reviews << review
+
+end
+
+100.times do
+  user = User.create(
+    username: FFaker::Internet::user_name,
+    email: FFaker::Internet::email,
+    password: "password"
+  )
+
+  review = BootcampReview.create(content: FFaker::HipsterIpsum::paragraph, campus: rand(6 .. 9), worthit: worth[rand(0 .. 1)], location: rand(3 .. 6), jobhelp: rand(5 .. 9), hired: answer[rand(0 .. 3)])
+
+  user.bootcamp_reviews << review
+  bc[1].bootcamp_reviews << review
+
+end
+
+100.times do
+  user = User.create(
+    username: FFaker::Internet::user_name,
+    email: FFaker::Internet::email,
+    password: "password"
+  )
+
+  review = BootcampReview.create(content: FFaker::HipsterIpsum::paragraph, campus: rand(7 .. 10), worthit: worth[0], location: rand(5 .. 8), jobhelp: rand(5 .. 9), hired: answer[rand(0 .. 3)])
+
+  user.bootcamp_reviews << review
+  bc[0].bootcamp_reviews << review
 
 end

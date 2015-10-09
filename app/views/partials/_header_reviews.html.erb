@@ -8,7 +8,7 @@
             <br></div>
           <!--Bootcamp Logo-->
           
-          <div class="col-md-3">
+          <div class="col-md-2">
             <div class="col-md-12 white-box">
               <img id="imgUserProfile" class="th img-responsive" src=<%= @bootcamp.photo %>>
             </div>
@@ -27,39 +27,35 @@
           </div>
           
           <!--Bootcamp Info-->
-          <div class="col-md-5">
-            <h3>About</h3><br>
-            <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12"><%= @bootcamp.information %></div><br><br><br>
+          <div class="col-md-6 text-center">
+            <h3 style="">About</h3>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 about">
+                <h4 class="text-center"><%= @bootcamp.information %></h4>
+              </div>
 
             <h3>Info</h3>
+            <div id="info-wrapper">
               <ul class="column top" style="list-style:none;">
                 <li> <i class="fa fa-map-marker"></i> <%= @bootcamp.address %></li>
                 <li><i class="fa fa-link"></i><a href="<%= @bootcamp.url %>" style="color:white"><%= @bootcamp.url %></a></li>
+
                 <li><i class="fa fa-phone"></i><%= @bootcamp.phone %></li>
-                <li><i class="fa fa-envelope"></i><%= @bootcamp.email %></li>
+                  
+                <li><i class="fa fa-envelope"></i><%= @bootcamp.email %></li></h4>
               </ul>
-
-
-            
-
-
-
-
+            </div>
             
           </div>
 
 
           <!--Review bars-->  
-          <div class="col-md-3 bars">
+          <div class="col-md-4 bars">
+            <h3 class="text-center">Bootcamp Rating Overview</h3>
+            <br>
             <small>WORTH THE PRICE?</small>
               <div class="progress">
                 <div id="worthitRating" class="bar ratingAverage" data-percentage="0" style="width: 0%;">0%</div>
               </div>
-
-           <!--    <small>STUDENTS EMPLOYED AFTER GRADUATION</small>
-              <div class="progress">
-                 <div id="propertyRating" class="bar ratingAverage" data-percentage="0" style="width: 0%;">0%</div>
-              </div> -->
              
              <small>LOCATION SCORE</small>
               <div class="progress">
@@ -75,10 +71,15 @@
              <div class="progress">
                  <div id="campusRating" class="bar ratingAverage" data-percentage="0" style="width: 0%;">0%</div>
              </div>
+             
+
              <!--Header Buttons-->
              <div id="submit-button-wrapper" class="text-center">
-                 <a type="button"  class="btn btn-lg btn-default" href="/bootcamps/<%= @bootcamp.id %>/review" data-no-turbolink="true">Submit a Review</a>
-                <a type="button" class="btn btn-lg btn-default" href="/bootcamp_reviews/<%= @bootcamp.id %>" data-no-turbolink="true">Read All Reviews</a>
+              <ul class="rev-button">
+                <li><a type="button"  class="btn btn-lg btn-default" href="/bootcamps/<%= @bootcamp.id %>/review" data-no-turbolink="true">Submit a Review</a></li>
+
+                <li><a type="button" class="btn btn-lg btn-default" href="/bootcamp_reviews/<%= @bootcamp.id %>" data-no-turbolink="true">Read All Reviews</a></li>
+              </ul>
              </div>
            
          </div>

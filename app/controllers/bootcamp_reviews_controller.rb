@@ -9,6 +9,7 @@ class BootcampReviewsController < ApplicationController
   end
 
   def show
+    
 
   end
 
