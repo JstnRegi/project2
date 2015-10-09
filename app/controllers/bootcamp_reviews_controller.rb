@@ -9,27 +9,8 @@ class BootcampReviewsController < ApplicationController
   end
 
   def show
+    
 
-
-
-    # @trunc_reviews = @reviews.map do |review|
-    #   trunc_review = {
-    #     created_at: review.created_at,
-    #     jobhelp: review.jobhelp,
-    #     location: review.location, 
-    #     worthit: review.worthit,
-    #     hired: review.hired,
-    #     content: review.content
-    #   }
-    #   if review.content.length > 200
-    #     trunc_review.content = trunc_review.content.truncate(200)
-        
-    #     return trunc_review
-    #     else
-    #       return trunc_review
-    #   end
-    # end
-    # binding.pry
   end
 
   def edit
@@ -49,10 +30,6 @@ class BootcampReviewsController < ApplicationController
 
     render text: "/users/#{userId}/"
   end
-
-      
-      # user = BootcampReview.find_by_id(reviewId)
-      
 
   def destroy
   end

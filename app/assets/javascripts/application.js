@@ -27,6 +27,7 @@ $(document).ready(function() {
 	//   }
 	// });
 
+	reviewsChecker();
 
 	$("#home_link").click(function() {
 		scrollToAnchor('home_link');
@@ -48,8 +49,11 @@ $(document).ready(function() {
 		scrollToAnchor('slide4');
 	});
 
+	
 	submitReview();
 	editReview();
+	bootcampBars();
+	
 
 
 });
@@ -88,8 +92,8 @@ function jobStatus() {
 		hired = 'Not Employed';
 	} else if (document.getElementById('still-attending').checked){
 		hired = 'Still Attending';
-	} else if (document.getElementById('not-seeking-employment').checked){
-		hired = 'Not Seeking Employment';
+	} else if (document.getElementById('not-looking').checked){
+		hired = 'Not Looking';
 	}
 
 	return hired;
@@ -131,4 +135,54 @@ function editReview() {
 			// console.log(data);
 		});
 	})
+}
+
+function bootcampBars() {
+
+	var campusAvg = ($('#campusAvg').html());
+	
+	var yesAvg = ($('#yesAvg').html());
+
+	var jobhelpAvg = ($('#jobhelpAvg').html());
+	
+	var locationAvg = ($('#locationAvg').html());
+	
+	$('#worthitRating').css({backgroundColor: "rgb(225, 66, 66)", textAlign: "center", color: "white"});
+	$('#locationRating').css({backgroundColor: "rgb(225, 66, 66)", textAlign: "center", color: "white"});
+	$('#jobhelpRating').css({backgroundColor: "rgb(225, 66, 66)", textAlign: "center", color: "white"});
+	$('#campusRating').css({backgroundColor: "rgb(225, 66, 66)", textAlign: "center", color: "white"});
+	$('#worthitRating').html(yesAvg + "%");
+	$('#locationRating').html(locationAvg + "%");
+	$('#jobhelpRating').html(jobhelpAvg + "%");
+	$('#campusRating').html(campusAvg + "%");
+
+	
+	console.log('campus' + $('#campusAvg').html());
+	console.log('yes' + $('#yesAvg').html());
+	console.log($('#locationAvg').html());
+	console.log($('#jobhelpAvg').html());
+
+
+	$("#worthitRating").animate({
+    width:  yesAvg + "%"
+  	}, 1000, "easeOutCubic");
+
+  	$("#locationRating").animate({
+    width: locationAvg + "%"
+  	}, 1000, "easeOutCubic");
+
+  	$("#jobhelpRating").animate({
+    width: jobhelpAvg + "%"
+  	}, 1000, "easeOutCubic");
+
+  	$("#campusRating").animate({
+    width: campusAvg + "%"
+  	}, 1000, "easeOutCubic");
+
+}
+
+function reviewsChecker() {
+	if(!!document.getElementById("reviews-area")) {
+		$('#navbar-ul').prepend('<li><button class="btn btn-default" id="slide1_button">Reviews</button></li>')
+	}
 }

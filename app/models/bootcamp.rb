@@ -17,16 +17,16 @@ class Bootcamp < ActiveRecord::Base
 	def calculate_review_averages
 		calculate_review_totals
 		@review_count = bootcamp_reviews.count
-		@employedAvg = @employedTotal/@review_count.round(2)
-		@notEmployedAvg = @notEmployedTotal/@review_count.round(2)
-		@stillAttendingAvg = @stillAttendingTotal/@review_count.round(2)
-		@notSeekingAvg = @notSeekingTotal/@review_count.round(2)
-		@noAvg = @worthNoTotal/@review_count.round(2)
-		@yesAvg = @worthYesTotal/@review_count.round(2)
-		@locationAvg = @locationTotal/@review_count
-		@jobhelpAvg = @jobhelpTotal/@review_count
-		@campusAvg = @campusTotal/@review_count
-		@overall = @locationAvg + @jobhelpAvg + @campusAvg
+		@employedAvg = (@employedTotal/@review_count.to_f * 10).floor
+		@notEmployedAvg = (@notEmployedTotal/@review_count.to_f * 10).floor
+		@stillAttendingAvg = (@stillAttendingTotal/@review_count.to_f * 10).floor
+		@notSeekingAvg = (@notSeekingTotal/@review_count.to_f * 10).floor
+		@noAvg = (@worthNoTotal/@review_count.to_f * 100).floor
+		@yesAvg = (@worthYesTotal/@review_count.to_f * 100).floor
+		@locationAvg = (@locationTotal/@review_count.to_f * 10).floor
+		@jobhelpAvg = (@jobhelpTotal/@review_count.to_f * 10).floor
+		@campusAvg = (@campusTotal/@review_count.to_f * 10).floor
+		@overall = (@locationAvg + @jobhelpAvg + @campusAvg).floor
 		@overallAvg = @overall / 3
 	end
 
@@ -56,7 +56,7 @@ class Bootcamp < ActiveRecord::Base
 		    @notEmployedTotal = @notEmployedTotal + 1
 		  elsif review.hired == "Still Attending"
 		    @stillAttendingTotal = @stillAttendingTotal + 1
-		  elsif review.hired == "Not Seeking Employment"
+		  elsif review.hired == "Not Looking"
 		    @notSeekingTotal = @notSeekingTotal + 1
 		  end
 		end

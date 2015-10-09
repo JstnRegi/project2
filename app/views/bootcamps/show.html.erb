@@ -4,13 +4,8 @@
 <%= render 'partials/header_reviews' %>
 
 
-
-
-
 <!--Review Section-->
-<a name="reviews"></a>
-
-
+<a name="reviews"href="#/reviews" id="reviews-area"></a>
 <div class="container">
 	<div class="row">
 		<h1>Reviews</h1>
@@ -27,36 +22,56 @@
 							<li><%= review.created_at %></li>
 						</ul>
 					</div>
-					<div class="col-lg-9 col-md-9 col-xs-12">
-						<div class="col-lg-12 title-ratings">
-							<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p>Overview <br> Amazing!</p></div>
-							<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p>Job search: <br><%= review.jobhelp %></p></div>
-							<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p>Instructors: <br> Amazing!</p></div>
+				<div class="col-lg-9 col-md-9 col-xs-12">
+					<div class="col-lg-12 title-ratings">
 
-							<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p>Location: <br> <%= review.location %></p></div>
-							<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p>Worth it? <br> <%= review.worthit %></p></div>
-							<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p>Hired? <br>  <%= review.hired %></p></div>
-						</div>
+						<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p><span class="awesome-data"><%= (review.jobhelp + review.location + review.campus) / 3 %> </span><br>OVERAL RATING</p></div>
 
-						<div class="col-lg-12 review">
-							<p><%= review.content %></p>
-						</div>
-						<h5 class="more"><a href="#" class="button">Read More...</a></h5>
+						<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p><span class="awesome-data"><%= review.jobhelp %></span><br>CAREER SERVICES</p></div>
+
+						<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p><span class="awesome-data"><%= review.campus %></span><br>CAMPUS & FACILITIES</p></div>
+
+						<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p><span class="awesome-data"><%= review.location %></span><br>LOCATION</p></div>
+
+						<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p><span class="awesome-data"> <%= review.worthit %></span><br>WORTH THE TUITION?</p></div>
+
+						<div class="col-lg-4 col-sm-4 col-xs-6 rating-boxes"><p><span class="awesome-data"> <%= review.hired %></span><br>CURRENT JOB STATUS </p></div>
 					</div>
+
+					<div class="col-lg-12 review">
+						 <p><%= truncate(review.content, length: 200, separator: " ") %></p>
+					</div>
+					
+					<h5 class="more"><a href="#" class="button">Read More...</a></h5>
 				</div>
-				<!--End of Review-->
-			<% end %>
-		</div>
+			</div>
+			<!--End of Review-->
+		<% end %>
+	</div>
 
 			<!-- Sidebar -->
-		<div class="col-lg-2 col-xs-12 photo">
+		<div class="col-lg-2 col-xs-12">
+
+			<!--Courses Offered-->
+
+            
+              <h3>Courses Offered</h3>
+              <ul>
+                <h5><% @bootcamp.courses.split("|").each do | course |  %>
+                <li><%= course %></li><br>
+                <% end %></h5>
+              </ul>
+            
+            <br>
 			<ul>
-				<h5>More Information</h5>
-				<li>hours</li>
-				<li>hours</li>
-				<li>hours</li>
-				<li>hours</li>
-				<li>hours</li>
+				<h4>More Information</h4>
+					<h5><li>Hours of Operations: <br> M-F 8:30AM - 9:00PM</li>
+					<br>
+					<li>Scholarships<br>Yes</li>
+					<br>
+					<li>Co-ed <br> Yes </li>
+					<br>
+					<li>Meal Plan <br> Hahaha, no.</li></h5>
 			</ul>
 		</div>
 		<!-- /#sidebar-wrapper -->
