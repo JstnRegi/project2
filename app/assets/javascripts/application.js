@@ -85,18 +85,7 @@ function submitReview() {
 }
 
 function jobStatus() {
-	var hired;
-	if (document.getElementById('employed').checked) {
-		hired = 'Employed';
-	} else if (document.getElementById('not-employed').checked) {
-		hired = 'Not Employed';
-	} else if (document.getElementById('still-attending').checked){
-		hired = 'Still Attending';
-	} else if (document.getElementById('not-looking').checked){
-		hired = 'Not Looking';
-	}
-
-	return hired;
+	return $(".radio#employment input:checked").val()
 }
 
 function worthIt() {
