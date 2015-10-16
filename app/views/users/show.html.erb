@@ -1,10 +1,7 @@
-<%= render 'partials/nav_show' %>
-
-
 <div class="container user-profile">
 
 	<h1>Welcome, <% if current_user %>
-<%= current_user.username %>                   
+<%= current_user.username %>
 <% end %>!</h1>
 
 <% if @user.bootcamp_reviews.length >0 %>
@@ -49,18 +46,15 @@
 				</div>
 			</div>
 
-	
+
 		<% end %>
 <% else %>
 
 	<div>
 		<p>You have not written any reviews. Please write some soon!</p>
 	</div>
-	
+
 <% end %>
 
 
 </div>
-
-<%= render "partials/footer_show" %>
-

@@ -1,6 +1,3 @@
-<!--Partials Nav bar-->
-<%= render 'partials/nav_show' %>
-
 <header>
   <h1>Write a Bootcamp Review</h1>
 </header>
@@ -40,19 +37,19 @@
           		  <label><input type="radio" name="worth" id="worth-it-no">No</label>
           		</div>
 
-                <br>  
+                <br>
 
                  <!--Multiple ratings, number-->
-              <h3>On a scale of 1 - 10, how would you rate...?</h3>   
+              <h3>On a scale of 1 - 10, how would you rate...?</h3>
                 <ul>
-                  <li>  Facilities/Campus <input type="number"  id="campus-rate" value="1" min="1" max="10"></li> 
+                  <li>  Facilities/Campus <input type="number"  id="campus-rate" value="1" min="1" max="10"></li>
                   <li>Job Support & Career Services <input type="number" id="job-supp-rate" value="1" min="1" max="10"></li>
                   <li><p>Location <input type="number"  id="location-rate" value="1" min="1" max="10"></li>
-                </ul> 
+                </ul>
 
-                <br>     	
+                <br>
         </form>
-      
+
 
 <!-- <form id="instructor-review-form">
 	<textarea cols="30" rows="5" id="instructor-review-form" name="instructor_review[text]" placeholder='Instructor'></textarea>
@@ -63,7 +60,3 @@
     </div>
   </div>
 </div>
-
-
-<!--Footer-->
-<%= render "partials/footer_show" %>
