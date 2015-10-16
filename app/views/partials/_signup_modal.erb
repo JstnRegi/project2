@@ -6,6 +6,9 @@
         <h4 class="modal-title">Sign-Up</h4>
       </div>
       <div class="modal-body">
+        <% if flash[:sign_up_errors] %>
+          <div class="error"><%= flash[:sign_up_errors] %></div>
+        <% end %>
         <div class="signup-wrapper">
            <%= form_for @user do |f| %>
         <%= f.email_field :email, class: "new-user-form", placeholder: 'email123@domain.com' %>

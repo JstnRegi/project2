@@ -1,5 +1,9 @@
 Sign In
 
+<% if flash[:login_errors] %>
+  <div class="notice"><%= flash[:login_errors] %></div>
+<% end %>
+
 <%= form_for @user, url: "/sessions", method: "post" do |f| %>
   <div>
     <%= f.text_field :email, placeholder: "Email" %>

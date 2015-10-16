@@ -6,15 +6,18 @@
         <h4 class="modal-title">Login</h4>
       </div>
       <div class="modal-body">
+        <% if flash[:login_errors] %>
+          <div class="notice"><%= flash[:login_errors] %></div>
+        <% end %>
       	<div class="signup-wrapper">
       		 <%= form_for @user, url: sessions_path, method: 'post' do |f| %>
-<div>
-  <%= f.email_field :email, placeholder: 'Email' %>
-  <%= f.password_field :password, placeholder: 'Password' %>
-  <%= f.submit 'Sign In' %>
+            <div>
+              <%= f.email_field :email, placeholder: 'Email' %>
+              <%= f.password_field :password, placeholder: 'Password' %>
+              <%= f.submit 'Sign In' %>
 
-</div> 
-<% end %>
+            </div>
+          <% end %>
       	</div>
       </div>
     </div><!-- /.modal-content -->

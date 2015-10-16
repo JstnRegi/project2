@@ -12,6 +12,9 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to "/"
     else
+      # use flash message to inform user that their
+      # password isn't long enough
+      flash[:sign_up_errors] = @user.errors.full_messages
       redirect_to "/"
     end
   end
