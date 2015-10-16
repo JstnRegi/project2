@@ -13,8 +13,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul id="navbar-ul" class="nav navbar-nav home_nav_button navbar-right">
 
-          
-          <% if !!current_user.id %>
+
+          <% if current_user && current_user.id %>
             <li><a href="/users/<%= current_user.id %>" type="button">Profile</a></li>
             <li><a href="/users/<%= current_user.id %>" type="button">Logout</a></li>
           <% else %>
