@@ -14,15 +14,16 @@ class ReviewsController < ApplicationController
   	#make checks in front end before even submitting
     # binding.pry
     bcContent = params.require(:bootcamp_review).require(:"0").permit(:value)[:value]
-  	bcCampus = params[:campus]
-    bcId = params[:bootcamp_id]
-    bcWorth = params[:worthit]
-    bcJobHelp = params[:jobsupp]
-    bcLocation = params[:locationrate]
-    bcHired = params[:hired]
-  	
 
-  	bcReviewInfo = {content: bcContent, hired: bcHired, worthit: bcWorth, jobhelp: bcJobHelp, campus: bcCampus, location: bcLocation}
+    bcReviewInfo = {
+    	bcCampus: params[:campus],
+      bcId: params[:bootcamp_id],
+      bcWorth: params[:worthit],
+      bcJobHelp: params[:jobsupp],
+      bcLocation: params[:locationrate],
+      bcHired: params[:hired]
+    }
+
   	bcReview = BootcampReview.create(bcReviewInfo)
     bc = Bootcamp.find_by_id(bcId)
     user = current_user
@@ -32,8 +33,8 @@ class ReviewsController < ApplicationController
   	# instructorReviewInfo = {content: instructorContent}
   	# instructorReview = InstructorReview.create(instructorReviewInfo)
 
-  	
-    render text: "/bootcamps/#{bc.id}"
+
+    render text: "/bootcamps/#{bc.id}" ## change to JSON
   	# render text: "/bootcamp_reviews"
   end
 
